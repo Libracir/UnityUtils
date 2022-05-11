@@ -5,6 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Collidable : MonoBehaviour
 {
+	//This Class should be inherited by anything that can be collided with
+	//to decide what happens when collided with, override the OnCollide Function
+	
+	
     public ContactFilter2D filter;
     private BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];

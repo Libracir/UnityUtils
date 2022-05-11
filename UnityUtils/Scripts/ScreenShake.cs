@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
 public class ScreenShakeController : MonoBehaviour
 {
-    private float shakeTimeRemaining;
-    private float shakePower;
+    private float timeRemaining;
+    private float power;
 
     private void LateUpdate()
     {
-        if (shakeTimeRemaining > 0)
+        if (timeRemaining > 0)
         {
-            shakeTimeRemaining -= Time.deltaTime;
+            timeRemaining -= Time.deltaTime;
 
-            float xAmount = Random.Range(-1f, 1f) * shakePower;
-            float yAmount = Random.Range(-1f, 1f) * shakePower;
+            float x = Random.Range(-1f, 1f) * power;
+            float y = Random.Range(-1f, 1f) * power;
 
-            transform.position += new Vector3(xAmount, yAmount, 0);
+            transform.position += new Vector3(x, y, 0);
         }
     }
 
+	//Call this function from anywhere to shake the screen
     public void StartShake(float length, float power)
     {
-        shakeTimeRemaining = length;
-        shakePower = power;
+        timeRemaining = length;
+        power = power;
     }
 }

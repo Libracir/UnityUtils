@@ -4,38 +4,46 @@ using UnityEngine;
 
 public class Basic2DCamera : MonoBehaviour
 {
+	//GameObject you want the Camera to follow
     public Transform lookAt;
+	
+	//Amount you can move in each direction before the camera starts to follow
     public float boundX = 0.15f;
     public float boundY = 0.05f;
 
     private void LateUpdate()
     {
-        Vector3 delta = Vector3.zero;
-        float deltaX = lookAt.position.x - transform.position.x;
-        if (deltaX > boundX || deltaX < -boundX)
+        Vector3 temp = Vector3.zero;
+		
+		//X calculation
+        float posX = lookAt.position.x - transform.position.x;
+        if (posX > boundX || posX < -boundX)
         {
             if (transform.position.x < lookAt.position.x)
             {
-                delta.x = deltaX - boundX;
+                temp.x = posX - boundX;
             }
             else
             {
-                delta.x = deltaX + boundX;
+                temp.x = posX + boundX;
             }
         }
-        float deltaY = lookAt.position.y - transform.position.y;
-        if (deltaY > boundY || deltaY < -boundY)
+		
+		//Y calculation
+        float posY = lookAt.position.y - transform.position.y;
+        if (posY > boundY || posY < -boundY)
         {
             if (transform.position.y < lookAt.position.y)
             {
-                delta.y = deltaY - boundY;
+                temp.y = posY - boundY;
             }
             else
             {
-                delta.y = deltaY + boundY;
+                temp.y = posY + boundY;
             }
         }
 
-        transform.position =  new Vector3(delta.x += transform.position.x,delta.y += transform.position.y, transform.position.z);
+		//Moves the Camera
+        transform.position =  new Vector3(temp.x += transform.position.x,temp.y += transform.position.y, transform.position.z);
     }
 }
