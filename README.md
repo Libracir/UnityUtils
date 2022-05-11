@@ -4,7 +4,10 @@ A collection of scripts I use in my unity projects
 ## Current Utilitys
 
 ### 2D Dynamic Sorting Order
-Changes the Sorting Order of Gameobject during runtime to make things further up render behind and things further down render in front.
+Changes the Sorting Order of Gameobjects during runtime to make things further up render behind and things further down render in front.
+
+### 2D Static Sorting Order
+Like the Dynamic Sorting order, except will only run once, Meaning it should only be used for objects which do not move within your scene
 
 ### Basic 2D Camera
 A very basic 2D camera, has two bounds, x and y, and when passed the camera will follow the targeted gameObject.
