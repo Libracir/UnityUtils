@@ -20,3 +20,9 @@ Makes the GameObject it's attached to always follow the mouse.
 
 ### Screen Shake
 Contains a function to trigger a screen shake effect, Duration and Strength of the shake can both be set through this function.
+
+### Lerp To Point
+Moves a GameObject to a given point, the amount of time taken to move there will not change depending on distance but speed will
+
+### Fixed Speed Lerp To Point
+Moves a GameObject to a given point, the speedt will not change depending on distance but the amount of time taken will
